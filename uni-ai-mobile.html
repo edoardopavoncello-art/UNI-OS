@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="theme-color" content="#f6f7fb" />
+<title>UNI OS — iPhone Demo</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#14161b;--muted:#737985;--line:#e8eaf0;--dark:#111318;--soft:#f0f2f6;--r:22px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:100%;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,sans-serif;color:var(--text)}body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}button,input{font:inherit}.app{max-width:520px;margin:0 auto}.top{padding:calc(16px + env(safe-area-inset-top)) 18px 14px;display:flex;justify-content:space-between;align-items:center}.top h1{margin:0;font-size:28px;letter-spacing:-1px}.avatar{width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-weight:800}.screen{display:none;padding:0 14px 12px}.screen.active{display:block}.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 8px 24px rgba(15,18,25,.03)}.hero{padding:22px}.hero h2{font-size:30px;line-height:1.02;letter-spacing:-1.3px;margin:0 0 10px}.hero p{margin:0;color:var(--muted);line-height:1.5}.exam{margin-top:14px;background:var(--dark);color:#fff;border-radius:18px;padding:18px}.exam small{opacity:.6}.exam h3{margin:6px 0 4px}.bar{height:7px;background:#30333a;border-radius:10px;margin:13px 0;overflow:hidden}.bar span{display:block;height:100%;width:62%;background:#fff}.section{margin:22px 2px 10px;font-size:19px;font-weight:800}.task{padding:15px 16px;display:flex;gap:11px;align-items:center;border-bottom:1px solid var(--line)}.task:last-child{border-bottom:0}.dot{width:9px;height:9px;border-radius:50%;background:#111318;flex:0 0 auto}.task b{font-size:14px}.task small{display:block;color:var(--muted);margin-top:3px}.badge{margin-left:auto;background:var(--soft);padding:6px 8px;border-radius:9px;font-size:10px}.aihero{background:linear-gradient(145deg,#111318,#242831);color:#fff;padding:21px;position:relative;overflow:hidden}.aihero:after{content:"✦";position:absolute;right:-8px;top:-35px;font-size:132px;opacity:.06}.aihero h2{font-size:30px;margin:0 0 8px}.aihero p{color:#c8ccd4;margin:0 0 16px;line-height:1.5}.prompt{display:flex;gap:7px;background:#fff;padding:7px;border-radius:16px;position:relative;z-index:1}.prompt input{flex:1;min-width:0;border:0;outline:0;padding:11px;background:transparent;font-size:15px}.prompt button,.blackbtn{border:0;background:#111318;color:#fff;border-radius:12px;padding:0 14px;font-weight:750}.tools{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tool{padding:16px;min-height:145px}.ico{width:36px;height:36px;border-radius:12px;background:var(--soft);display:grid;place-items:center;margin-bottom:12px}.tool h4{margin:0 0 5px}.tool p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}.upload{padding:18px;text-align:center;border:1.5px dashed #d7dbe3;border-radius:17px;margin:14px;background:#fafbfc}.upload input{display:none}.upload label{display:inline-block;background:#111318;color:#fff;padding:11px 14px;border-radius:12px;font-weight:750}.upload p{font-size:12px;color:var(--muted);margin-bottom:0}.course{padding:17px;margin-bottom:10px}.course h4{margin:0 0 5px}.course p{margin:0;color:var(--muted);font-size:13px}.bottom{position:fixed;z-index:30;left:0;right:0;bottom:0;background:rgba(255,255,255,.95);backdrop-filter:blur(18px);border-top:1px solid var(--line);padding:7px 6px max(7px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(5,1fr)}.bottom button{border:0;background:transparent;color:#8a909a;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;padding:5px 0}.bottom i{font-style:normal;font-size:20px}.bottom button.active{color:#111318;font-weight:800}.bottom .ai i{width:36px;height:36px;border-radius:13px;background:#111318;color:#fff;display:grid;place-items:center;margin-top:-16px}.chat{position:fixed;z-index:50;inset:0;background:#fff;display:none;flex-direction:column}.chat.open{display:flex}.chathead{padding:max(14px,env(safe-area-inset-top)) 15px 12px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.close{width:34px;height:34px;border:0;border-radius:11px;background:var(--soft)}.msgs{flex:1;overflow:auto;background:#fafbfc;padding:14px}.msg{max-width:86%;padding:11px 13px;border-radius:16px;margin-bottom:9px;font-size:14px;line-height:1.45}.msg.ai{background:#fff;border:1px solid var(--line)}.msg.user{margin-left:auto;background:#111318;color:#fff}.chatinput{display:flex;gap:8px;border-top:1px solid var(--line);padding:10px 10px max(10px,env(safe-area-inset-bottom))}.chatinput input{flex:1;min-width:0;border:1px solid var(--line);border-radius:13px;padding:12px;outline:none}.chatinput button{border:0;background:#111318;color:#fff;border-radius:12px;padding:0 14px;font-weight:750}.notice{font-size:12px;color:var(--muted);padding:10px 2px}.hidden{display:none}@media(max-width:360px){.tools{grid-template-columns:1fr}.hero h2{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top"><h1 id="title">Buon pomeriggio, Edoardo.</h1><div class="avatar">EP</div></header>
+
+  <section class="screen active" id="home">
+    <div class="card hero"><h2>Tutta la tua università<br>in un unico posto.</h2><p>UNI OS organizza corsi, esami, materiali e studio. UNI AI ti aiuta quando serve.</p><div class="exam"><small>PROSSIMO ESAME</small><h3>Analisi I</h3><div style="opacity:.7;font-size:13px">24 settembre • 17 giorni</div><div class="bar"><span></span></div><small>Preparazione stimata: 62%</small></div></div>
+    <div class="section">Oggi</div>
+    <div class="card"><div class="task"><div class="dot"></div><div><b>Analisi I — Limiti</b><small>45 min • teoria + esercizi</small></div><span class="badge">Alta</span></div><div class="task"><div class="dot"></div><div><b>Programmazione — Array</b><small>35 min • ripasso</small></div><span class="badge">Oggi</span></div><div class="task"><div class="dot"></div><div><b>Geometria — Dispensa 03</b><small>20 min • lettura</small></div></div></div>
+    <div class="section">UNI AI suggerisce</div>
+    <div class="card course"><p>Hai più difficoltà sui limiti notevoli. Conviene iniziare da quelli prima degli esercizi misti.</p><button class="blackbtn" style="height:42px;margin-top:12px" onclick="ask('Allenami sui limiti notevoli con esercizi progressivi.')">Apri UNI AI</button></div>
+  </section>
+
+  <section class="screen" id="courses"><div class="section">I tuoi corsi</div><div class="card course"><h4>Analisi I</h4><p>12 materiali • 62% preparazione</p></div><div class="card course"><h4>Programmazione</h4><p>8 materiali • 71% preparazione</p></div><div class="card course"><h4>Geometria</h4><p>6 materiali • 48% preparazione</p></div><div class="section">Materiali locali</div><div class="card" id="files"><div class="task"><div><b>Nessun materiale</b><small>I file scelti su iPhone compariranno qui.</small></div></div></div></section>
+
+  <section class="screen" id="ai">
+    <div class="card aihero"><h2>UNI AI</h2><p>Il tutor interno a UNI OS che usa corsi, materiali, scadenze e piano di studio.</p><div class="prompt"><input id="heroInput" placeholder="Chiedi qualcosa…"><button onclick="askHero()">Chiedi</button></div></div>
+    <div class="notice">Demo iPhone standalone • funziona anche senza server.</div>
+    <div class="section">Studia con l’AI</div><div class="tools">
+      <div class="card tool" onclick="ask('Spiegami i limiti notevoli con esempi semplici.')"><div class="ico">✦</div><h4>Tutor personale</h4><p>Spiegazioni e domande adattate alla materia.</p></div>
+      <div class="card tool" onclick="document.getElementById('fileInput').click()"><div class="ico">▣</div><h4>Studia un file</h4><p>Seleziona un PDF o un appunto dal tuo iPhone.</p></div>
+      <div class="card tool" onclick="ask('Organizza un piano di studio per Analisi I, Programmazione e Geometria.')"><div class="ico">◷</div><h4>Planner AI</h4><p>Organizza le priorità in base agli esami.</p></div>
+      <div class="card tool" onclick="ask('Fammi una simulazione breve di esame di Programmazione.')"><div class="ico">◎</div><h4>Simula esame</h4><p>Domande progressive e feedback.</p></div>
+    </div>
+    <div class="section">Carica materiale</div><div class="card"><div class="upload"><label for="fileInput">Scegli un file</label><input id="fileInput" type="file" accept=".pdf,.txt,.md,.csv,application/pdf,text/plain"><p id="fileStatus">Demo locale: memorizzo nome e dimensione del file.</p></div></div>
+  </section>
+
+  <section class="screen" id="calendar"><div class="section">Calendario</div><div class="card"><div class="task"><div><b>8 SET • Analisi I</b><small>14:00 • Aula N12</small></div></div><div class="task"><div><b>8 SET • Geometria</b><small>16:00 • Aula N12</small></div></div><div class="task"><div><b>24 SET • Esame Analisi I</b><small>09:00</small></div><span class="badge">Esame</span></div></div></section>
+  <section class="screen" id="profile"><div class="section">Profilo</div><div class="card"><div class="task"><div><b>Università</b><small>Roma Tre</small></div></div><div class="task"><div><b>Corso</b><small>Ingegneria Informatica</small></div></div><div class="task"><div><b>UNI AI</b><small>Demo iPhone</small></div></div></div></section>
+</div>
+
+<nav class="bottom"><button class="active" data-s="home"><i>⌂</i>Home</button><button data-s="courses"><i>▤</i>Corsi</button><button class="ai" data-s="ai"><i>✦</i>AI</button><button data-s="calendar"><i>◷</i>Calendario</button><button data-s="profile"><i>○</i>Profilo</button></nav>
+
+<div class="chat" id="chat"><div class="chathead"><div><b>UNI AI</b><div style="font-size:11px;color:var(--muted)">demo interna a UNI OS</div></div><button class="close" onclick="closeChat()">✕</button></div><div class="msgs" id="msgs"><div class="msg ai">Ciao Edoardo. Sono la demo di UNI AI dentro UNI OS. Posso simulare tutor, planner e preparazione esami.</div></div><div class="chatinput"><input id="chatInput" placeholder="Scrivi a UNI AI…"><button onclick="send()">Invia</button></div></div>
+<script>
+const titleEl=document.getElementById('title');
+const chatEl=document.getElementById('chat');
+const msgsEl=document.getElementById('msgs');
+const chatInputEl=document.getElementById('chatInput');
+const heroInputEl=document.getElementById('heroInput');
+const fileInputEl=document.getElementById('fileInput');
+const fileStatusEl=document.getElementById('fileStatus');
+const filesEl=document.getElementById('files');
+const titles={home:'Buon pomeriggio, Edoardo.',courses:'I tuoi corsi',ai:'UNI AI',calendar:'Calendario',profile:'Profilo'};
+function go(id){
+  document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id===id));
+  document.querySelectorAll('[data-s]').forEach(x=>x.classList.toggle('active',x.dataset.s===id));
+  titleEl.textContent=titles[id]||'UNI OS';
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('[data-s]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.s)));
+function openChat(){chatEl.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>chatInputEl.focus(),180)}
+function closeChat(){chatEl.classList.remove('open');document.body.style.overflow=''}
+function ask(text){go('ai');openChat();chatInputEl.value=text;send()}
+function askHero(){const v=heroInputEl.value.trim();openChat();chatInputEl.value=v||'Cosa devo studiare oggi?';send()}
+function reply(t){const s=t.toLowerCase();if(s.includes('limiti'))return 'Partiamo dai limiti notevoli più usati. Ti proporrei: 1) ripasso rapido delle forme standard; 2) due esempi guidati; 3) tre esercizi senza soluzione immediata. In UNI OS reale userò anche i tuoi appunti di Analisi.';if(s.includes('piano')||s.includes('stud'))return 'Per oggi darei priorità ad Analisi I: 45 minuti sui limiti, poi 35 minuti di Programmazione sugli array e infine 20 minuti di Geometria. È una simulazione: nella versione reale il piano verrà costruito da scadenze e progressi effettivi.';if(s.includes('programmazione')||s.includes('simul'))return 'Simulazione: dato un array di interi, come troveresti il valore massimo e la sua posizione? Rispondi spiegando prima l’algoritmo e poi, se vuoi, scrivendo il codice.';return 'Questa è la modalità demo iPhone. Ho ricevuto la tua richiesta: “'+t+'”. Nella versione con backend UNI AI potrà rispondere usando materiali, corsi e memoria dello studente.'}
+function send(){const t=chatInputEl.value.trim();if(!t)return;const u=document.createElement('div');u.className='msg user';u.textContent=t;msgsEl.appendChild(u);chatInputEl.value='';msgsEl.scrollTop=msgsEl.scrollHeight;setTimeout(()=>{const d=document.createElement('div');d.className='msg ai';d.textContent=reply(t);msgsEl.appendChild(d);msgsEl.scrollTop=msgsEl.scrollHeight},220)}
+chatInputEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();send()}});
+heroInputEl.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();askHero()}});
+fileInputEl.addEventListener('change',()=>{const f=fileInputEl.files&&fileInputEl.files[0];if(!f)return;fileStatusEl.textContent='Selezionato: '+f.name+' • '+Math.max(1,Math.round(f.size/1024))+' KB';try{const data=JSON.parse(localStorage.getItem('unios_files')||'[]');data.unshift({name:f.name,size:f.size,date:new Date().toISOString()});localStorage.setItem('unios_files',JSON.stringify(data.slice(0,8)));}catch(e){}renderFiles();});
+function renderFiles(){let data=[];try{data=JSON.parse(localStorage.getItem('unios_files')||'[]')}catch(e){}filesEl.innerHTML='';if(!data.length){filesEl.innerHTML='<div class="task"><div><b>Nessun materiale</b><small>I file scelti su iPhone compariranno qui.</small></div></div>';return;}data.forEach(f=>{const row=document.createElement('div');row.className='task';const wrap=document.createElement('div');const b=document.createElement('b');b.textContent=f.name;const small=document.createElement('small');small.textContent='Salvato in questa demo • '+Math.max(1,Math.round(f.size/1024))+' KB';wrap.appendChild(b);wrap.appendChild(small);const badge=document.createElement('span');badge.className='badge';badge.textContent='Locale';row.appendChild(wrap);row.appendChild(badge);filesEl.appendChild(row);});}
+window.go=go;window.ask=ask;window.askHero=askHero;window.closeChat=closeChat;window.send=send;
+renderFiles();
+</script>
+</body>
+</html>
